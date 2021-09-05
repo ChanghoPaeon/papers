@@ -2,6 +2,8 @@
 
 
 ## 들어가기에 앞서
+- clone 한 뒤 vscode 에 markdown previewer 설치하고 보세요. 그래야 수식이 보입니다.
+  - latex 수식 사이트에 붙이는 방법은 로딩이 오래 걸림.
 - 내용 9장, refer 2장, Supplementary Material 9장(!!!)
 - 이 논문이 처음 접할때 어렵다면 
   - 수학적인 내용 보다는 수리통계적 지식이 필요 (저도 모르는 내용들도 있음 - GDA, LDA 등)
