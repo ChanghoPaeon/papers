@@ -282,12 +282,13 @@ We remark that such weighted averaging of confidence scores can prevent the degr
     $$ \{ \hat{\mu}_{c} : \forall i = 1 ... C\} , \hat{\Sigma}$$
     1. Compute the new class mean:
       $$\hat{\mu}_{C+1} \leftarrow \frac{1}{N_{C+1}} \Sigma_{i} f(x_{i})$$ 
+      $$\hat{µ}_{C+1} \leftarrow \frac{1}{N_{C+1}} \Sigma_{i} f(x_{i})$$ 
     2. Compute the covariance of the new class:
        $$ \hat{\Sigma}_{C+1} \leftarrow \frac{1}{N_{C+1}} \Sigma_{i} (f(x_{i}) - \hat{\mu}_{C+1} )  (f(x_{i}) - \hat{\mu}_{C+1} )^{T} $$
     3. Update the shared covariance:
       $$ \hat{\Sigma} \leftarrow \frac{C}{C+1}\hat{\Sigma} +  \frac{1}{C+1}\hat{\Sigma}_{C+1} $$
   -  Mean and covariance of all classes
-  $$ \{ \hat{\mu}_{c} : \forall i = 1 ... C+1\} , \hat{\Sigma}$$
+  $$ \{ \hat{\mu}_{c} : \forall i = 1 ... C+1 \} , \hat{\Sigma}$$
 
 As a natural extension, we also show that the Mahalanobis distance-based confidence score can be utilized in class-incremental learning tasks [29]: a classifier pre-trained on base classes is progressively updated whenever a new class with corresponding samples occurs.
 
