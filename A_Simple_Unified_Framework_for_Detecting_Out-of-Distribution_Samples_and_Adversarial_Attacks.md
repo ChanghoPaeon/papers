@@ -192,7 +192,7 @@ Interestingly, we found that the softmax accuracy (red bar) is also achieved by 
 Specifically, for each test sample x, we calculate the pre-processed sample xb by adding the small perturbations as follows:
 - 다음과 같이 small pertubations 을 더해서 pre-processed sample 을 계산
 
-- $$ \hat{x} = x + \epsilon \, sign(\bigtriangledown_{x} \; (f(x) - \hat{mu}_{\hat{c}})^{T} \hat{\Sigma}^{-1}  \; (f(x) - \hat{mu}_{\hat{c}})  )$$
+- $$ \hat{x} = x + \epsilon \, sign(\bigtriangledown_{x} \; (f(x) - \hat{\mu}_{\hat{c}})^{T} \hat{\Sigma}^{-1}  \; (f(x) - \hat{\mu}_{\hat{c}})  )$$
   - 위 식은 의의는 아래 문서 참고.
   - ε is a magnitude of noise and bc is the index of the closest class.
 
@@ -201,7 +201,7 @@ We remark that the noise is generated to increase the proposed confidence score 
 - 악의적 공격과 달리, 제안된 confidence score 를 높이기 위해 노이즈가 사용됨.
 
 In our experiments, such perturbation can have stronger effect on separating the in- and out-of-distribution samples.
-- 실험에서 이런 미동이 인도메인/아운돔인 의 분리에 강한 영향을 가질 수 있었다.
+- 실험에서 이런 미동이 인도메인/아웃도메인 의 분리에 강한 영향을 가질 수 있었다.
 
 
 We remark that similar input pre-processing was studied in [21], where the perturbations are added to increase the softmax score of the predicted label.
