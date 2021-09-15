@@ -43,6 +43,8 @@
 3. class 별 **f(x)** 의 mean, covariance 을 empirical 하게 추정
     - [Empirical distribution function](https://en.wikipedia.org/wiki/Empirical_distribution_function)
 4. test sample **x** 에 대하여, confidence score **M(x)** 를 정의 :  Mahalanobis distance 가 제일 작은 C -> M(x) = (Mahalanobis distance)^2
+5. 기존 연구 결과 조합하여 최종 confidence score 를 계산
+  - noise 를 활용한 calibration + Feature 앙상블 (각 레이어마다 나오는 Mahalanobis score 의 가중합 ) 하여 
 
 
 
