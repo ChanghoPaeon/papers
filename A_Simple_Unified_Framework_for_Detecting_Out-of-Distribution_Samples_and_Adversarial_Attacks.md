@@ -35,6 +35,7 @@
       - [Kullback–Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence)
   - [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
   - [Matrix Calculus](https://ccrma.stanford.edu/~dattorro/matrixcalc.pdf)
+  - [최대우도법](https://angeloyeo.github.io/2020/07/17/MLE.html)
 
 ## 핵심
 1. softmax 로 사전 학습 
@@ -341,6 +342,7 @@ We believe that our approach have a potential to apply to many other related mac
       - [Kullback–Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence)
   - [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
   - [Matrix Calculus](https://ccrma.stanford.edu/~dattorro/matrixcalc.pdf)
+  - [최대우도법](https://angeloyeo.github.io/2020/07/17/MLE.html)
 
 ### A Preliminaries for Gaussian discriminant analysis
 
