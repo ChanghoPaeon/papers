@@ -248,8 +248,19 @@ To further improve the performance, we design a feature ensemble method as descr
 
 - 성능을 더 향상 시키기 위해, feature ensemble method 를 Algorithm 1 에 디자인 했다.
 
-We first extract the confidence scores from all layers, and then integrate them by weighted averaging: Σ α_l·M_l(x), where M_l(·) and α_ is the confidence score at the l-th layer and its weight, respectively. 
+- Algorithm 1 
+  - 각 layer l 에 대해서 아래 작업 반복
+    1. Find the closets class: 
+      $$ \hat{c} = \arg \min_{c} (f_{l}(x) - \hat{\mu}_{l, c} )^{T} \hat{\Sigma}^{-1}_{l} (f_{l}(x) - \hat{\mu}_{l, c} ) $$ 
+    2. Add small noise to test sample:
+       $$ \hat{x} = x + \epsilon \, sign(\bigtriangledown_{x} \; (f(x) - \hat{\mu}_{\hat{c}})^{T} \hat{\Sigma}^{-1}  \; (f(x) - \hat{\mu}_{\hat{c}})  )$$
+    3. Computing confidence score:
+      $$M_{l} = \max_{c} - (f_{l}(x) - \hat{\mu}_{l, c} )^{T} \hat{\Sigma}^{-1}_{l} (f_{l}(x) - \hat{\mu}_{l, c} ) $$
+  -  최종 Confidence score return
+     $$\Sigma_{l} \alpha_{l} M_{l}$$
 
+
+We first extract the confidence scores from all layers, and then integrate them by weighted averaging: Σ α_l·M_l(x), where M_l(·) and α_ is the confidence score at the l-th layer and its weight, respectively. 
 - 우리는 먼저 모든 layer 에서 confidence score 를 계산하고 weighted averaging 한다.
 
 **In our experiments, following similar strategies in [22], we choose the weight of each layer α_l by training a logistic regression detector using validation samples.**
@@ -263,6 +274,20 @@ We remark that such weighted averaging of confidence scores can prevent the degr
 
 ### 2.3 Class-incremental learning using Mahalanobis distance-based score
 
+- Algorithm 2 
+  - 새로운 class sample 에 대해서
+    new :   
+    $$ \{x_{i} : \forall i = 1 ... N_{C+1}\}$$
+    observed mean and covariance:
+    $$ \{ \hat{\mu}_{c} : \forall i = 1 ... C\} , \hat{\Sigma}$$
+    1. Compute the new class mean:
+      $$\hat{\mu}_{C+1} \leftarrow \frac{1}{N_{C+1}} \Sigma_{i} f(x_{i})$$ 
+    2. Compute the covariance of the new class:
+       $$ \hat{\Sigma}_{C+1} \leftarrow \frac{1}{N_{C+1}} \Sigma_{i} (f(x_{i}) - \hat{\mu}_{C+1} )  (f(x_{i}) - \hat{\mu}_{C+1} )^{T} $$
+    3. Update the shared covariance:
+      $$ \hat{\Sigma} \leftarrow \frac{C}{C+1}\hat{\Sigma} +  \frac{1}{C+1}\hat{\Sigma}_{C+1} $$
+  -  Mean and covariance of all classes
+  $$ \{ \hat{\mu}_{c} : \forall i = 1 ... C+1\} , \hat{\Sigma}$$
 
 As a natural extension, we also show that the Mahalanobis distance-based confidence score can be utilized in class-incremental learning tasks [29]: a classifier pre-trained on base classes is progressively updated whenever a new class with corresponding samples occurs.
 
