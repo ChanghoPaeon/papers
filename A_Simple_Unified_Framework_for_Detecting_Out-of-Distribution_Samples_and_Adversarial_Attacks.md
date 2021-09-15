@@ -36,6 +36,9 @@
   - [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
   - [Matrix Calculus](https://ccrma.stanford.edu/~dattorro/matrixcalc.pdf)
   - [최대우도법](https://angeloyeo.github.io/2020/07/17/MLE.html)
+  - -[noise 관련 최초 논문 리뷰](https://leedakyeong.tistory.com/entry/%EB%85%BC%EB%AC%B8-FGSM-%EB%A6%AC%EB%B7%B0-EXPLAINING-AND-HARNESSING-ADVERSARIAL-EXAMPLES)
+    - 악의적 공격을 위해 코스트 함수의 미분 방향으로 조금 더함 
+    - 중간다리 논문인 21 에서는 소프트 맥스 score 를 올리기 위해 사용
 
 ## 핵심
 1. softmax 로 사전 학습 
