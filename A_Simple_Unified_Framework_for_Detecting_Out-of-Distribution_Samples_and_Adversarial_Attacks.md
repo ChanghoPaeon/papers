@@ -36,9 +36,16 @@
   - [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
   - [Matrix Calculus](https://ccrma.stanford.edu/~dattorro/matrixcalc.pdf)
   - [최대우도법](https://angeloyeo.github.io/2020/07/17/MLE.html)
-  - -[noise 관련 최초 논문 리뷰](https://leedakyeong.tistory.com/entry/%EB%85%BC%EB%AC%B8-FGSM-%EB%A6%AC%EB%B7%B0-EXPLAINING-AND-HARNESSING-ADVERSARIAL-EXAMPLES)
-    - 악의적 공격을 위해 코스트 함수의 미분 방향으로 조금 더함 
+  - [noise 관련 최초 논문 리뷰](https://leedakyeong.tistory.com/entry/%EB%85%BC%EB%AC%B8-FGSM-%EB%A6%AC%EB%B7%B0-EXPLAINING-AND-HARNESSING-ADVERSARIAL-EXAMPLES)
+    - [논문](https://arxiv.org/pdf/1412.6572.pdf) 
+      - 3p 상단 그림
+      - nn 이 생각보다 linear 하다고 이야기 함. (많이 사용하는 activation funtion 인 relu 를 생각하면 piecewise linear 하다.)
+    - 악의적 공격을 위해 코스트 함수의 미분 방향으로 조금 더 함 
     - 중간다리 논문인 21 에서는 소프트 맥스 score 를 올리기 위해 사용
+  - [Feature 앙상블 관련 논문](https://arxiv.org/pdf/1801.02613.pdf)
+    - [간략 리뷰](https://righ120.github.io/abstract/2018/11/30/2nd-post.html)
+    - Feature 앙상블은 page 7의 algorithm 내에서 나옴. 본 논문의 핵심 개념은 아님.(Local Intrinsic Dimensionality 를 이용한 Adversarial subsapce 이해가 핵심 개념인듯.)
+      - each layer 는 있지만 가중합을 하지는 않음.
 
 ## 핵심
 1. softmax 로 사전 학습 
