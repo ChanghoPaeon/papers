@@ -32,3 +32,9 @@
 
 
 
+### Supplementary
+
+#### (Topology)[https://en.wikipedia.org/wiki/Topology]
+- 
+
+#### (미분다양체를 사용한 데이터 분석, Manifold learning)[https://namu.wiki/w/%EC%9C%84%EC%83%81%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D#toc]
