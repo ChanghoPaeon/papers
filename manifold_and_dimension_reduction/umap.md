@@ -3,7 +3,7 @@
 
 
 
-- Abstract
+#### Abstract
 
  UMAP (Uniform Manifold Approximation and Projection) is a novel manifold learning technique for dimension reduction. UMAP is constructed
 from a theoretical framework based in Riemannian geometry and algebraic topology. e result is a practical scalable algorithm that is applicable to real world data. The UMAP algorithm is competitive with t-SNE for visualization quality, and arguably preserves more of the global structure with superior run time performance. Furthermore, UMAP has no computational restrictions on embedding dimension, making it viable as a general purpose dimension reduction technique for machine learning.
@@ -11,6 +11,17 @@ from a theoretical framework based in Riemannian geometry and algebraic topology
 
 - 각 데이터에 open ball with fixed radius 만들고  포함된 것 끼리 연결 -> 
 - [UMAP wiki](https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction#Uniform_manifold_approximation_and_projection)
+
+
+#### 2 Theoretical Foundations for UMAP
+
+ The theoretical foundations for UMAP are largely based in manifold theory and topological data analysis. Much of the theory is most easily explained in the language of topology and category theory. Readers may consult [39], [49] and [40] for background. Readers more interested in practical computational aspects of the algorithm, and not necessarily the theoretical motivation for the computations involved, may wish to skip this section. 
+ 
+ Readers more familiar with traditional machine learning may find the relationships between UMAP, t-SNE and Largeviz located in Appendix C enlightening. Unfortunately, this purely computational view fails to shed any light upon the reasoning that underlies the algorithmic decisions made in UMAP. Without strong theoretical foundations the only arguments which can be made about algorithms amount to empirical measures, for which there are no clear universal choices for unsupervised problems. 
+ 
+ At a high level, UMAP uses local manifold approximations and patches together their local fuzzy simplicial set representations to construct a topological representation of the high dimensional data. Given some low dimensional representation of the data, a similar process can be used to construct an equivalent topological representation. UMAP then optimizes the layout of the data representation in the low dimensional space, to minimize the cross-entropy between the two topological representations
+ 
+ The construction of fuzzy topological representations can be broken down into two problems: approximating a manifold on which the data is assumed to lie; and constructing a fuzzy simplicial set representation of the approximated manifold. In explaining the algorithm we will first discuss the method of approximating the manifold for the source data. Next we will discuss how to construct a fuzzy simplicial set structure from the manifold approximation. Finally, we will discuss the construction of the fuzzy simplicial set associated to a low dimensional representation (where the manifold is simply Rd ), and how to optimize the representation with respect to our objective function
 
 ### [How UMAP Works](https://umap-learn.readthedocs.io/en/latest/how_umap_works.html#how-umap-works)
 
