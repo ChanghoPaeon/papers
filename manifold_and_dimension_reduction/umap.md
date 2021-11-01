@@ -8,11 +8,6 @@
  UMAP (Uniform Manifold Approximation and Projection) is a novel manifold learning technique for dimension reduction. UMAP is constructed
 from a theoretical framework based in Riemannian geometry and algebraic topology. e result is a practical scalable algorithm that is applicable to real world data. The UMAP algorithm is competitive with t-SNE for visualization quality, and arguably preserves more of the global structure with superior run time performance. Furthermore, UMAP has no computational restrictions on embedding dimension, making it viable as a general purpose dimension reduction technique for machine learning.
 
-
-- 각 데이터에 open ball with fixed radius 만들고  포함된 것 끼리 연결 -> 
-- [UMAP wiki](https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction#Uniform_manifold_approximation_and_projection)
-
-
 #### 2 Theoretical Foundations for UMAP
 
  The theoretical foundations for UMAP are largely based in manifold theory and topological data analysis. Much of the theory is most easily explained in the language of topology and category theory. Readers may consult [39], [49] and [40] for background. Readers more interested in practical computational aspects of the algorithm, and not necessarily the theoretical motivation for the computations involved, may wish to skip this section. 
@@ -25,11 +20,17 @@ from a theoretical framework based in Riemannian geometry and algebraic topology
 
 * * *
 
+
+
 ### [How UMAP Works](https://umap-learn.readthedocs.io/en/latest/how_umap_works.html#how-umap-works)
 
  - simplex 란
    - https://en.wikipedia.org/wiki/Simplex
    - k-simplex : R^{k} 상의 k+1개 점, affinely independent (k+1 개 의 점이 다른 두개의 점으로 만들어지는 직선상에 있지 않아야 함)
+
+- 각 데이터에 open ball with fixed radius 만들고  포함된 것 끼리 연결 -> 
+- [UMAP wiki](https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction#Uniform_manifold_approximation_and_projection)
+
 
 ### [Understanding UMAP](https://pair-code.github.io/understanding-umap/)
 
