@@ -3,10 +3,9 @@
 
 
 - 각 데이터에 open ball with fixed radius 만들고  포함된 것 끼리 연결 -> 
+- [UMAP wiki](https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction#Uniform_manifold_approximation_and_projection)
 
-
-### [How UMAP Works
-(https://umap-learn.readthedocs.io/en/latest/how_umap_works.html#how-umap-works)
+### [How UMAP Works](https://umap-learn.readthedocs.io/en/latest/how_umap_works.html#how-umap-works)
 
  - simplex 란
    - https://en.wikipedia.org/wiki/Simplex
@@ -34,7 +33,7 @@
 
 ### Supplementary
 
-#### (Topology)[https://en.wikipedia.org/wiki/Topology]
+#### [Topology](https://en.wikipedia.org/wiki/Topology)
 - 
 
-#### (미분다양체를 사용한 데이터 분석, Manifold learning)[https://namu.wiki/w/%EC%9C%84%EC%83%81%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D#toc]
+#### [미분다양체를 사용한 데이터 분석, Manifold learning](https://namu.wiki/w/%EC%9C%84%EC%83%81%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D#toc)
