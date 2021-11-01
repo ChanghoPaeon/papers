@@ -4,9 +4,9 @@
 
 - 원리
 
-  원본 데이터 x_i 들에 대해,  x_i, x_j 의 유사도를 정의하고 
-  차원 축소된 y_i에 대해, y_i, y_j 의 유사도를 정의하고
-  두 공간상 유사도 들의 차이가 적어지도록 학슴
+  원본 데이터 x_i 들에 대해,  x_i, x_j 의 유사도를 정의.
+  차원 축소된 y_i에 대해, y_i, y_j 의 유사도를 정의.
+  두 공간상 유사도 들의 차이가 적어지도록 학습
 
   - High Dimension 에서 x_i 와 x_j 의 유사도 :  p_ij = 
     - simgma : that make the entpory of distribution over neighbors equal to log k. Here, k is the effective number of local neighbors or “perplexity” and is chosen by hand.
@@ -18,6 +18,7 @@
 - 유사도 수식 설명 :
   - p_ij : x_i , x_j 가 가까우면 차가 줄고 -> 분자 커짐
 
+- [T-SNE wiki](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)
 
 - T-SNE: SNE 에서 축소된 공간에서의 분포를 Gaussian neighborhoods but with a fixed variance 대신 t-student 사용
 
