@@ -15,7 +15,7 @@
   
   - Low Dimension 에서  x_i 와 x_j 의 유사도 : q_ij = x_i의 low-dimension image y_i 에 대해 p_ij 와 유사하게 정의 (simga 나누는거 빠짐.
   
-  - Cost: KL(P|Q) 로 정의 -> P 와 Q가 유사할수돍 작아지고 P가 커질수록 가중
+  - Cost: KL(P|Q) 로 정의 -> P 와 Q가 유사할수록 작아지고 P가 커질수록 가중
 
 - 유사도 수식 설명 :
   - p_ij : x_i , x_j 가 가까우면 차가 줄고 -> 분자 커짐
