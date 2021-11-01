@@ -1,3 +1,5 @@
+* * *
+
 
 ## [Stochastic Neighbor Embedding](https://cs.nyu.edu/~roweis/papers/sne_final.pdf)
 
@@ -40,6 +42,8 @@
 
 #### t-SNE
  - SNE 에서 가우시안 대신 t-student 분포
+
+* * *
 
 ### Supplementary
 #### links
