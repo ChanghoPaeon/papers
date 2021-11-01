@@ -27,6 +27,25 @@ from a theoretical framework based in Riemannian geometry and algebraic topology
 2. The underlying manifold of interest is locally connected
 3. Preserving the topological structure of this manifold is the primary goal
 
+As highlighted in Appendix C any algorithm that attempts to use a  mathematical structure akin to a k-neighbour graph to approximate a manifold must follow a similar basic structure.
+• Graph Construction
+1. Construct a weighted k-neighbour graph
+2. Apply some transform on the edges to ambient local distance.
+3. Deal with the inherent asymmetry of the k-neighbour graph.
+• Graph Layout
+1. De랴ne an objective function that preserves desired characteristics of this k-neighbour graph.
+2. Find a low dimensional representation which optimizes this objective function.
+
+##### 3.1 Graph Construction
+
+
+The selection of ρi derives from the local-connectivity constraint described in Section 2.2. In particular it ensures that xi connects to at least one other data point with an edge of weight 1; this is equivalent to the resulting fuzzy simplicial set being locally connected at xi. In practical terms this significantly improves the representation on very high dimensional data where other algorithms such as t-SNE begin to suffer from the curse of dimensionality. The selection of σi corresponds to (a smoothed) normalisation factor, defining the Riemannian metric local to the point xi as described in Section2.1
+
+##### 3.2 Graph Layout
+ - The forces described above are derived from gradients optimising the edge-wise cross-entropy between the weighted graph G, and an equivalent weighted graph H constructed from the points {yi}i=1..N . That is, we are seeking to position points yi such that the weighted graph induced by those points most closely approximates the graph G, where we measure the difference between weighted graphs by the total cross entropy over all the edge existence probabilities. Since the weighted graph G captures the topology of the source data, the equivalent weighted graph H constructed from the points {yi}i=1..N matches the topology as closely as the optimization allows, and thus provides a good low dimensional representation of the overall topology of the data
+
+ - 두 그래프 G와 H에 대해 엣지의 존재 확률 의 total cross entropy 를 difference로 measure 하여 학습.
+
 #### 4 Implementation and Hyper-parameters
 
 ##### 4.3 Hyper-parameters
