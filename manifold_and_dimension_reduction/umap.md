@@ -23,7 +23,18 @@ from a theoretical framework based in Riemannian geometry and algebraic topology
 
 #### 3 A Computational View of UMAP
 
+1. There exists a manifold on which the data would be uniformly distributed
+2. The underlying manifold of interest is locally connected
+3. Preserving the topological structure of this manifold is the primary goal
+
 #### 4 Implementation and Hyper-parameters
+
+##### 4.3 Hyper-parameters
+
+1. n, the number of neighbors to consider when approximating the local metric;
+2. d, the target embedding dimension;
+3. min-dist, the desired separation between close points in the embedding space; and
+4. n-epochs, the number of training epochs to use when optimizing the low dimensional representation
 
 #### 5 Practical Efficacy
 ##### 5.1 Qualitative Comparison of Multiple Algorithms
@@ -36,6 +47,9 @@ from a theoretical framework based in Riemannian geometry and algebraic topology
  ![image](https://user-images.githubusercontent.com/27984736/139658662-13a8db77-cf5c-4627-a6ac-ffdb9d255f05.png)
 
 
+##### 5.3 Embedding Stability
+
+
 ##### 5.4 Computational Performance Comparisons
 
 ![image](https://user-images.githubusercontent.com/27984736/139658860-acea56f1-31eb-4fd5-99c4-a2c9cb3f6a37.png)
@@ -43,11 +57,36 @@ from a theoretical framework based in Riemannian geometry and algebraic topology
 
 #### 6 Weaknesses
 
+- Similarly to most non-linear dimension reduction techniques (including t-SNE and Isomap), UMAP lacks the strong interpretability of Principal Component Analysis (PCA) and related techniques such a Non-Negative Matrix Factorization (NMF). In particular the dimensions of the UMAP embedding space have no specic meaning, unlike PCA where the dimensions are the directions of greatest variance in the source data. Furthermore, since UMAP is based on the distance between observations rather than the source features, it does not have an equivalent of factor loadings that linear techniques such as PCA, or Factor Analysis can provide. If strong interpretability is critical we therefore recommend
+linear techniques such as PCA, NMF or pLSA.
+  - PCA나 NMF 대비 강한 interpretability 가 부족. (embeeding space dimension 등). strong interpretability 가 필요하면 PCA 써라.
+
+- One of the core assumptions of UMAP is that there exists manifold structure in the data. Because of this UMAP can tend to nd manifold structure within the noise of a dataset  similar to the way the human mind finds structured constellations among the stars. As more data is sampled the amount of structure evident from noise will tend to decrease and UMAP becomes more robust, however care must be taken with small sample sizes of noisy data, or data with only large scale manifold structure. Detecting when a spurious embedding has occurred is a topic of further research.
+  -  small size of noisy data or data with only large scale manifold structure 에 적용시 주의.
+
+- UMAP is derived from the axiom that local distance is of more importance than long range distances (similar to techniques like t-SNE and LargeVis). UMAP therefore concerns itself primarily with accurately representing local structure. While we believe that UMAP can capture more global structure than these other techniques, it remains true that if global structure is of primary interest then UMAP may not be the best choice for dimension reduction.  ​Multi-dimensional scaling specically seeks to preserve the full distance matrix of  the data, and as such is a good candidate when all scales of structure are of equal importance. PHATE [42] is a good example of a hybrid approach that begins with local structure information and makes use of MDS to attempt to preserve long scale distances as well. It should be noted that these techniques are more  computationally intensive and thus rely on landmarking 
+  - t-SNE, LargeVis 보다 long range distance 를 보긴 하지만 local distance 정보를 더 중요하다고 보는 것이 근간. 전역구조 capture 가 중요하면 최선이 아닐 수 있음. 
+
+- It should also be noted that a significant contributor to UMAP’s relative global structure preservation is derived from the Laplacian Eigenmaps initialization (which, in turn, followed from the theoretical foundations).  ​This was noted in, for example, [29]. The authors of that paper demonstrate that t-SNE, with similar initialization, can perform equivalently to UMAP in a particular measure of global structure preservation. However, the objective function derived for UMAP (cross-entropy) is signicantly different from that of t-SNE (KL-divergence), in how it penalizes failures to preserve non-local and global structure, and is also a signicant contributor
+  - Laplacian Eigenmaps initialization 과 objetive 함수의 차이가 전역 구조에 중요한 역할을 함. (Laplacian Eigenmaps initialization 을 통해 t-sne 에서도 전역구조 보존이 됨을 보인 논문이 있음)
+
+- It is worth noting that, in combining the local simplicial set structures, pure nearest neighbor structure in the high dimensional space is not explicitly preserved. In particular it introduces so called ”reverse-nearestneighbors” into the classical knn-graph. is, combined with the fact that UMAP is preserving topology rather than pure metric structures, mean that UMAP will not perform as well as some methods on quality measures based on metric structure reservation – particularly methods, such as MDS – which are explicitly designed to optimize metric structure preservation
+  - local simplicial set 구조 결합시 high dimenssional space 의 구조가 명시적으로 보존되지 않음
+  - topology 를 보존하지 metric structure 를 명시적으로 보존하게 설계되지 않음.
+
+- UMAP attempts to discover a manifold on which your data is uniformly distributed. If you have strong confidence in the ambient distances of your data you should make use of a technique that explicitly attempts to preserve these distances. For example if your data consisted of a very loose structure in one area of your ambient space and a very dense structure in another region region UMAP would attempt to put these local areas on an even footing.
+
+- Finally, to improve the computational eciency of the algorithm a number of approximations are made. This can have an impact on the results of UMAP for small (less than 500 samples) dataset sizes. In particular the use of approximate nearest neighbor algorithms, and the negative sampling used in optimization, can result in suboptimal embeddings. For this reason we encourage users to take care with particularly small datasets. A slower but exact implementation of UMAP for small datasets is a future project.
+  - 계산 효율성을 위해 많은 근사치가 사용되는데, 500 개 미만 데이터로 UMAP 돌리면 영향 줄 수 있. 
+
+
 #### 7 Future Work
 
 #### 8 Conclusions
-
+ - t-SNE 보다 빠르고, better scaling 제공 -> 이전보다 더 큰 데이터에 대한 high quality embedding 얻을 수 있음
 * * *
+
+### Parameter 에 대한 설명
 
 
 
