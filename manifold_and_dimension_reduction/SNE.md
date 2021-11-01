@@ -1,5 +1,5 @@
 
-## (Stochastic Neighbor Embedding)[https://cs.nyu.edu/~roweis/papers/sne_final.pdf]
+## [Stochastic Neighbor Embedding](https://cs.nyu.edu/~roweis/papers/sne_final.pdf)
 
 
 - 원리
@@ -22,32 +22,31 @@
 - T-SNE: SNE 에서 축소된 공간에서의 분포를 Gaussian neighborhoods but with a fixed variance 대신 t-student 사용
 
 
-- (CSC 411 Lecture 13:t-SNE)[https://www.cs.toronto.edu/~jlucas/teaching/csc411/lectures/lec13_handout.pdf]
+- [CSC 411 Lecture 13:t-SNE](https://www.cs.toronto.edu/~jlucas/teaching/csc411/lectures/lec13_handout.pdf)
 
-- (t-SNE 개념과 사용법)[https://gaussian37.github.io/ml-concept-t_sne/]
+- [t-SNE 개념과 사용법](https://gaussian37.github.io/ml-concept-t_sne/)
   - 알고리즘의 시각적 이해를 돕는 그림이 있습니다.
 
-- (차원축소 시각화 도구 t - SNE Stochastic Neighbor Embedding)[https://m.blog.naver.com/xorrms78/222112752837]
+- [차원축소 시각화 도구 t - SNE Stochastic Neighbor Embedding](https://m.blog.naver.com/xorrms78/222112752837)
   - 수식을 간략히 이해하기 좋음
 
-- (t-Stochastic Neighbor Embedding (t-SNE) 와 perplexity)[https://lovit.github.io/nlp/representation/2018/09/28/tsne/]
+- [t-Stochastic Neighbor Embedding (t-SNE) 와 perplexity](https://lovit.github.io/nlp/representation/2018/09/28/tsne/)
   - 수식의 의미를 깊게 이해하기 좋음
     - 목차 : How to embed high dimensional vectors to low dimensional space
 
 
-- (Dimension Reduction PCA, tSNE, UMAP)[https://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/Dimension%20Reduction.pdf]
+- [Dimension Reduction PCA, tSNE, UMAP](https://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/Dimension%20Reduction.pdf)
 
 #### t-SNE
- - SNE 에서 가우시간 대신 t-student 분포 가서
-   - 
+ - SNE 에서 가우시안 대신 t-student 분포
 
 ### Supplementary
 #### links
  - [d-SNE](http://dmqm.korea.ac.kr/uploads/seminar/20200522_d-SNE_%EC%A0%95%EC%8A%B9%EC%84%AD%20final.pdf)
 
-- (CSC 411 Lecture 13:t-SNE)[https://www.cs.toronto.edu/~jlucas/teaching/csc411/lectures/lec13_handout.pdf]
+- [CSC 411 Lecture 13:t-SNE](https://www.cs.toronto.edu/~jlucas/teaching/csc411/lectures/lec13_handout.pdf)
 
--(Visualizing Data Using t-SNE)[https://www.youtube.com/watch?v=RJVL80Gg3lA&list=UUtXKDgv1AVoG88PLl8nGXmw]
+-[Visualizing Data Using t-SNE](https://www.youtube.com/watch?v=RJVL80Gg3lA&list=UUtXKDgv1AVoG88PLl8nGXmw)
 
 
 #### 정규 분포의 표본 평균과 모평균의 추정 
@@ -66,7 +65,7 @@
    - 고등학교때 문제들은 항상 모집단의 표준편차가 주어졌었음.
 
 
-- (t분포는 무엇이며, 언제 그리고 왜 쓸까?)[https://m.blog.naver.com/definitice/221031927257] 
+- [t분포는 무엇이며, 언제 그리고 왜 쓸까?](https://m.blog.naver.com/definitice/221031927257)
 
 
 - t 분포는  infinite mixed Gaussian distribution
