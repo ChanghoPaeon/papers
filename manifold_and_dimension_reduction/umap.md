@@ -107,7 +107,7 @@ linear techniques such as PCA, NMF or pLSA.
 
 ### Parameter 에 대한 설명
 
-
+### [UMAP Dimensionality Reduction — An Incredibly Robust Machine Learning Algorithm](https://towardsdatascience.com/umap-dimensionality-reduction-an-incredibly-robust-machine-learning-algorithm-b5acb01de568)
 
 ### [How UMAP Works](https://umap-learn.readthedocs.io/en/latest/how_umap_works.html#how-umap-works)
 
